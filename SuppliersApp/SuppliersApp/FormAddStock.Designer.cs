@@ -36,12 +36,12 @@
             txtPrice = new TextBox();
             btnAdd = new Button();
             mnuStrip = new MenuStrip();
+            mnuStripBack = new ToolStripMenuItem();
             contextMenuStrip2 = new ContextMenuStrip(components);
             lblStockID = new Label();
             lblDescription = new Label();
             lblPrice = new Label();
             lblQty = new Label();
-            mnuStripBack = new ToolStripMenuItem();
             mnuStrip.SuspendLayout();
             SuspendLayout();
             // 
@@ -63,7 +63,6 @@
             txtStockID.Name = "txtStockID";
             txtStockID.Size = new Size(100, 23);
             txtStockID.TabIndex = 2;
-            
             // 
             // txtDescription
             // 
@@ -71,7 +70,6 @@
             txtDescription.Name = "txtDescription";
             txtDescription.Size = new Size(100, 23);
             txtDescription.TabIndex = 3;
-            
             // 
             // txtPrice
             // 
@@ -79,7 +77,6 @@
             txtPrice.Name = "txtPrice";
             txtPrice.Size = new Size(100, 23);
             txtPrice.TabIndex = 4;
-            
             // 
             // btnAdd
             // 
@@ -89,6 +86,7 @@
             btnAdd.TabIndex = 5;
             btnAdd.Text = "Add";
             btnAdd.UseVisualStyleBackColor = true;
+            btnAdd.Click += btnAdd_Click;
             // 
             // mnuStrip
             // 
@@ -98,6 +96,14 @@
             mnuStrip.Size = new Size(800, 24);
             mnuStrip.TabIndex = 6;
             mnuStrip.Text = "menuStrip1";
+            // 
+            // mnuStripBack
+            // 
+            mnuStripBack.Alignment = ToolStripItemAlignment.Right;
+            mnuStripBack.Name = "mnuStripBack";
+            mnuStripBack.Size = new Size(44, 20);
+            mnuStripBack.Text = "Back";
+            mnuStripBack.Click += mnuStripBack_Click;
             // 
             // contextMenuStrip2
             // 
@@ -112,7 +118,6 @@
             lblStockID.Size = new Size(50, 15);
             lblStockID.TabIndex = 8;
             lblStockID.Text = "Stock ID";
-            
             // 
             // lblDescription
             // 
@@ -141,13 +146,6 @@
             lblQty.TabIndex = 11;
             lblQty.Text = "Quantity";
             // 
-            // mnuStripBack
-            // 
-            mnuStripBack.Alignment = ToolStripItemAlignment.Right;
-            mnuStripBack.Name = "mnuStripBack";
-            mnuStripBack.Size = new Size(44, 20);
-            mnuStripBack.Text = "Back";
-            // 
             // FormAddStock
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -166,7 +164,7 @@
             MainMenuStrip = mnuStrip;
             Name = "FormAddStock";
             Text = "Add Stock";
-            
+            Load += FormAddStock_Load;
             mnuStrip.ResumeLayout(false);
             mnuStrip.PerformLayout();
             ResumeLayout(false);

@@ -1,0 +1,81 @@
+﻿using System;
+using System.Data;
+
+namespace SuppliersApp
+{
+    public class Supplier
+    {
+        public int SupplierID { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }
+
+        public Supplier() : this(0, "", "", "") { }
+
+        public Supplier(int supplierID, string name, string email, string phone)
+        {
+            SupplierID = supplierID;
+            Name = name;
+            Email = email;
+            Phone = phone;
+        }
+
+        public static DataSet GetAllSuppliers()
+        {
+            string sqlQuery = "SELECT SupplierID, Name, Email, Phone FROM Supplier ORDER BY SupplierID";
+            return Database.ExecuteMultiRowQuery(sqlQuery);
+        }
+
+        public static Supplier GetSupplier(int id)
+        {
+            string sqlQuery = "SELECT SupplierID, Name, Email, Phone FROM Supplier WHERE SupplierID = " + id;
+            DataRow row = Database.ExecuteSingleRowQuery(sqlQuery);
+
+            if (row != null)
+            {
+                return new Supplier(
+                    Convert.ToInt32(row["SupplierID"]),
+                    row["Name"].ToString(),
+                    row["Email"].ToString(),
+                    row["Phone"].ToString()
+                );
+            }
+            return null;
+        }
+
+        public void AddSupplier()
+        {
+            string sqlQuery = "INSERT INTO Supplier VALUES(" +
+                SupplierID + ",'" +
+                Name + "','" +
+                Email + "','" +
+                Phone + "')";
+
+            Database.ExecuteNonQuery(sqlQuery);
+        }
+
+        public void UpdateSupplier()
+        {
+            string sqlQuery = "UPDATE Supplier SET " +
+                "Name='" + Name + "'," +
+                "Email='" + Email + "'," +
+                "Phone='" + Phone + "' " +
+                "WHERE SupplierID=" + SupplierID;
+
+            Database.ExecuteNonQuery(sqlQuery);
+        }
+
+        public static DataSet FindSupplier(string name)
+        {
+            string sqlQuery = "SELECT SupplierID, Name, Email, Phone FROM Supplier " +
+                              "WHERE Name LIKE '%" + name + "%' ORDER BY Name";
+
+            return Database.ExecuteMultiRowQuery(sqlQuery);
+        }
+
+        public static int GetNextSupplierID()
+        {
+            return Database.GetNextID("Supplier", "SupplierID");
+        }
+    }
+}
