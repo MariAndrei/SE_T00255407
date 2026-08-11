@@ -1,132 +1,92 @@
 ﻿using System;
 using System.Data;
-using System.Diagnostics;
-using Oracle.ManagedDataAccess.Client;
 
 namespace SuppliersApp
 {
     public class Stock
     {
-        // Properties
         public int StockID { get; set; }
         public string Description { get; set; }
         public decimal Price { get; set; }
         public int StockQty { get; set; }
+        public int SupplierID { get; set; }
 
-        // Default constructor
-        public Stock() : this(0, "", 0, 0)
-        {
+        public Stock() : this(0, "", 0, 0, 0) { }
 
-        }
-
-        // Constructor
-        public Stock(int stockID, string description, decimal price, int stockQty)
+        public Stock(int stockID, string description, decimal price, int stockQty, int supplierID = 0)
         {
             StockID = stockID;
             Description = description;
             Price = price;
             StockQty = stockQty;
+            SupplierID = supplierID;
         }
 
-        public override string ToString()
-        {
-            return "Stock ID: " + StockID +
-                   "\tDescription: " + Description +
-                   "\tPrice: " + Price +
-                   "\tQuantity: " + StockQty;
-        }
-
-        // Return all stock
         public static DataSet GetAllStock()
         {
-            string sqlQuery =
-                "SELECT StockID, Description, Price, StockQty " +
-                "FROM Stock ORDER BY StockID";
-
+            string sqlQuery = "SELECT StockID, Description, Price, StockQty, SupplierID FROM Stock ORDER BY StockID";
             return Database.ExecuteMultiRowQuery(sqlQuery);
         }
 
-        // Return one stock item
         public static Stock GetStock(int id)
         {
-            string sqlQuery =
-                "SELECT * FROM Stock WHERE StockID = " + id;
+            string sqlQuery = "SELECT StockID, Description, Price, StockQty, SupplierID FROM Stock WHERE StockID = " + id;
+            DataRow row = Database.ExecuteSingleRowQuery(sqlQuery);
 
-            OracleDataReader dr =
-                Database.ExecuteSingleRowQuery(sqlQuery);
+            if (row != null)
+            {
+                int supplierId = row["SupplierID"] != DBNull.Value ? Convert.ToInt32(row["SupplierID"]) : 0;
 
-            dr.Read();
-
-            string description = dr.GetString(1);
-            decimal price = dr.GetDecimal(2);
-            int qty = dr.GetInt32(3);
-
-            dr.Close();
-
-            return new Stock(id, description, price, qty);
+                return new Stock(
+                    Convert.ToInt32(row["StockID"]),
+                    row["Description"].ToString(),
+                    Convert.ToDecimal(row["Price"]),
+                    Convert.ToInt32(row["StockQty"]),
+                    supplierId
+                );
+            }
+            return null;
         }
 
-        // Add stock
         public void AddStock()
         {
-            Debug.WriteLine(this);
+            string supplierValue = SupplierID > 0 ? SupplierID.ToString() : "NULL";
 
-            string sqlQuery =
-                "INSERT INTO Stock VALUES(" +
+            string sqlQuery = "INSERT INTO Stock VALUES(" +
                 StockID + ",'" +
                 Description + "'," +
                 Price + "," +
-                StockQty + ")";
+                StockQty + "," +
+                supplierValue + ")";
 
             Database.ExecuteNonQuery(sqlQuery);
         }
 
-        // Update stock
         public void UpdateStock()
         {
-            string sqlQuery =
-                "UPDATE Stock SET " +
+            string supplierValue = SupplierID > 0 ? SupplierID.ToString() : "NULL";
+
+            string sqlQuery = "UPDATE Stock SET " +
                 "Description='" + Description + "'," +
                 "Price=" + Price + "," +
-                "StockQty=" + StockQty +
-                " WHERE StockID=" + StockID;
+                "StockQty=" + StockQty + "," +
+                "SupplierID=" + supplierValue + " " +
+                "WHERE StockID=" + StockID;
 
             Database.ExecuteNonQuery(sqlQuery);
         }
 
-        // Search by description
         public static DataSet FindStock(string description)
         {
-            string sqlQuery =
-                "SELECT StockID, Description, Price, StockQty " +
-                "FROM Stock " +
-                "WHERE Description LIKE '%" + description + "%' " +
-                "ORDER BY Description";
+            string sqlQuery = "SELECT StockID, Description, Price, StockQty, SupplierID FROM Stock " +
+                              "WHERE Description LIKE '%" + description + "%' ORDER BY Description";
 
             return Database.ExecuteMultiRowQuery(sqlQuery);
         }
 
-        // Next Stock ID
         public static int GetNextStockID()
         {
-            string sqlQuery =
-                "SELECT MAX(StockID) FROM Stock";
-
-            OracleDataReader dr =
-                Database.ExecuteSingleRowQuery(sqlQuery);
-
-            int nextID;
-
-            dr.Read();
-
-            if (dr.IsDBNull(0))
-                nextID = 1;
-            else
-                nextID = dr.GetInt32(0) + 1;
-
-            dr.Close();
-
-            return nextID;
+            return Database.GetNextID("Stock", "StockID");
         }
     }
 }
