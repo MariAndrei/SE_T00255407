@@ -29,141 +29,148 @@
         private void InitializeComponent()
         {
             menuStrip1 = new MenuStrip();
-            stockToolStripMenuItem = new ToolStripMenuItem();
-            addStockToolStripMenuItem = new ToolStripMenuItem();
-            updateStockToolStripMenuItem = new ToolStripMenuItem();
-            removeStockToolStripMenuItem = new ToolStripMenuItem();
-            supplierToolStripMenuItem = new ToolStripMenuItem();
-            addSupplierToolStripMenuItem = new ToolStripMenuItem();
-            updateSupplierToolStripMenuItem = new ToolStripMenuItem();
-            removeSupplierToolStripMenuItem = new ToolStripMenuItem();
-            saleToolStripMenuItem = new ToolStripMenuItem();
-            addSaleToolStripMenuItem = new ToolStripMenuItem();
-            updateSaleToolStripMenuItem = new ToolStripMenuItem();
-            removeSaleToolStripMenuItem = new ToolStripMenuItem();
-            revenueToolStripMenuItem = new ToolStripMenuItem();
-            viewRevenueToolStripMenuItem = new ToolStripMenuItem();
-            exitToolStripMenuItem = new ToolStripMenuItem();
-            removeSupplierToolStripMenuItem1 = new ToolStripMenuItem();
-            removeSaleToolStripMenuItem1 = new ToolStripMenuItem();
+            mnuStock = new ToolStripMenuItem();
+            mnuAddStock = new ToolStripMenuItem();
+            mnuUpdStock = new ToolStripMenuItem();
+            mnuListStock = new ToolStripMenuItem();
+            mnuRmvStock = new ToolStripMenuItem();
+            mnuSupplier = new ToolStripMenuItem();
+            mnuAddSupp = new ToolStripMenuItem();
+            mnuUpdSupp = new ToolStripMenuItem();
+            mnuListSupp = new ToolStripMenuItem();
+            mnuRmvSupp = new ToolStripMenuItem();
+            mnuSale = new ToolStripMenuItem();
+            mnuAddSale = new ToolStripMenuItem();
+            mnuUpdSale = new ToolStripMenuItem();
+            mnuListSale = new ToolStripMenuItem();
+            mnuRmvSale = new ToolStripMenuItem();
+            mnuRevenue = new ToolStripMenuItem();
+            mnuViewRevenue = new ToolStripMenuItem();
+            mnuStripExit = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { stockToolStripMenuItem, supplierToolStripMenuItem, saleToolStripMenuItem, revenueToolStripMenuItem, exitToolStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { mnuStock, mnuSupplier, mnuSale, mnuRevenue, mnuStripExit });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
-            // stockToolStripMenuItem
+            // mnuStock
             // 
-            stockToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { addStockToolStripMenuItem, updateStockToolStripMenuItem, removeStockToolStripMenuItem });
-            stockToolStripMenuItem.Name = "stockToolStripMenuItem";
-            stockToolStripMenuItem.Size = new Size(48, 20);
-            stockToolStripMenuItem.Text = "Stock";
+            mnuStock.DropDownItems.AddRange(new ToolStripItem[] { mnuAddStock, mnuUpdStock, mnuListStock, mnuRmvStock });
+            mnuStock.Name = "mnuStock";
+            mnuStock.Size = new Size(48, 20);
+            mnuStock.Text = "Stock";
             // 
-            // addStockToolStripMenuItem
+            // mnuAddStock
             // 
-            addStockToolStripMenuItem.Name = "addStockToolStripMenuItem";
-            addStockToolStripMenuItem.Size = new Size(149, 22);
-            addStockToolStripMenuItem.Text = "Add Stock";
+            mnuAddStock.Name = "mnuAddStock";
+            mnuAddStock.Size = new Size(180, 22);
+            mnuAddStock.Text = "Add Stock";
             // 
-            // updateStockToolStripMenuItem
+            // mnuUpdStock
             // 
-            updateStockToolStripMenuItem.Name = "updateStockToolStripMenuItem";
-            updateStockToolStripMenuItem.Size = new Size(149, 22);
-            updateStockToolStripMenuItem.Text = "Update Stock";
+            mnuUpdStock.Name = "mnuUpdStock";
+            mnuUpdStock.Size = new Size(180, 22);
+            mnuUpdStock.Text = "Update Stock";
             // 
-            // removeStockToolStripMenuItem
+            // mnuListStock
             // 
-            removeStockToolStripMenuItem.Name = "removeStockToolStripMenuItem";
-            removeStockToolStripMenuItem.Size = new Size(149, 22);
-            removeStockToolStripMenuItem.Text = "Remove Stock";
+            mnuListStock.Name = "mnuListStock";
+            mnuListStock.Size = new Size(180, 22);
+            mnuListStock.Text = "List Stock";
             // 
-            // supplierToolStripMenuItem
+            // mnuRmvStock
             // 
-            supplierToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { addSupplierToolStripMenuItem, updateSupplierToolStripMenuItem, removeSupplierToolStripMenuItem, removeSupplierToolStripMenuItem1 });
-            supplierToolStripMenuItem.Name = "supplierToolStripMenuItem";
-            supplierToolStripMenuItem.Size = new Size(62, 20);
-            supplierToolStripMenuItem.Text = "Supplier";
+            mnuRmvStock.Name = "mnuRmvStock";
+            mnuRmvStock.Size = new Size(180, 22);
+            mnuRmvStock.Text = "Remove Stock";
             // 
-            // addSupplierToolStripMenuItem
+            // mnuSupplier
             // 
-            addSupplierToolStripMenuItem.Name = "addSupplierToolStripMenuItem";
-            addSupplierToolStripMenuItem.Size = new Size(180, 22);
-            addSupplierToolStripMenuItem.Text = "Add Supplier";
+            mnuSupplier.DropDownItems.AddRange(new ToolStripItem[] { mnuAddSupp, mnuUpdSupp, mnuListSupp, mnuRmvSupp });
+            mnuSupplier.Name = "mnuSupplier";
+            mnuSupplier.Size = new Size(62, 20);
+            mnuSupplier.Text = "Supplier";
             // 
-            // updateSupplierToolStripMenuItem
+            // mnuAddSupp
             // 
-            updateSupplierToolStripMenuItem.Name = "updateSupplierToolStripMenuItem";
-            updateSupplierToolStripMenuItem.Size = new Size(180, 22);
-            updateSupplierToolStripMenuItem.Text = "Update Supplier";
+            mnuAddSupp.Name = "mnuAddSupp";
+            mnuAddSupp.Size = new Size(163, 22);
+            mnuAddSupp.Text = "Add Supplier";
             // 
-            // removeSupplierToolStripMenuItem
+            // mnuUpdSupp
             // 
-            removeSupplierToolStripMenuItem.Name = "removeSupplierToolStripMenuItem";
-            removeSupplierToolStripMenuItem.Size = new Size(180, 22);
-            removeSupplierToolStripMenuItem.Text = "List Supplier";
+            mnuUpdSupp.Name = "mnuUpdSupp";
+            mnuUpdSupp.Size = new Size(163, 22);
+            mnuUpdSupp.Text = "Update Supplier";
             // 
-            // saleToolStripMenuItem
+            // mnuListSupp
             // 
-            saleToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { addSaleToolStripMenuItem, updateSaleToolStripMenuItem, removeSaleToolStripMenuItem, removeSaleToolStripMenuItem1 });
-            saleToolStripMenuItem.Name = "saleToolStripMenuItem";
-            saleToolStripMenuItem.Size = new Size(40, 20);
-            saleToolStripMenuItem.Text = "Sale";
+            mnuListSupp.Name = "mnuListSupp";
+            mnuListSupp.Size = new Size(163, 22);
+            mnuListSupp.Text = "List Supplier";
             // 
-            // addSaleToolStripMenuItem
+            // mnuRmvSupp
             // 
-            addSaleToolStripMenuItem.Name = "addSaleToolStripMenuItem";
-            addSaleToolStripMenuItem.Size = new Size(141, 22);
-            addSaleToolStripMenuItem.Text = "Add Sale";
+            mnuRmvSupp.Name = "mnuRmvSupp";
+            mnuRmvSupp.Size = new Size(163, 22);
+            mnuRmvSupp.Text = "Remove Supplier";
             // 
-            // updateSaleToolStripMenuItem
+            // mnuSale
             // 
-            updateSaleToolStripMenuItem.Name = "updateSaleToolStripMenuItem";
-            updateSaleToolStripMenuItem.Size = new Size(141, 22);
-            updateSaleToolStripMenuItem.Text = "Update Sale";
+            mnuSale.DropDownItems.AddRange(new ToolStripItem[] { mnuAddSale, mnuUpdSale, mnuListSale, mnuRmvSale });
+            mnuSale.Name = "mnuSale";
+            mnuSale.Size = new Size(40, 20);
+            mnuSale.Text = "Sale";
             // 
-            // removeSaleToolStripMenuItem
+            // mnuAddSale
             // 
-            removeSaleToolStripMenuItem.Name = "removeSaleToolStripMenuItem";
-            removeSaleToolStripMenuItem.Size = new Size(141, 22);
-            removeSaleToolStripMenuItem.Text = "List Sale";
+            mnuAddSale.Name = "mnuAddSale";
+            mnuAddSale.Size = new Size(180, 22);
+            mnuAddSale.Text = "Add Sale";
             // 
-            // revenueToolStripMenuItem
+            // mnuUpdSale
             // 
-            revenueToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { viewRevenueToolStripMenuItem });
-            revenueToolStripMenuItem.Name = "revenueToolStripMenuItem";
-            revenueToolStripMenuItem.Size = new Size(64, 20);
-            revenueToolStripMenuItem.Text = "Revenue";
+            mnuUpdSale.Name = "mnuUpdSale";
+            mnuUpdSale.Size = new Size(180, 22);
+            mnuUpdSale.Text = "Update Sale";
             // 
-            // viewRevenueToolStripMenuItem
+            // mnuListSale
             // 
-            viewRevenueToolStripMenuItem.Name = "viewRevenueToolStripMenuItem";
-            viewRevenueToolStripMenuItem.Size = new Size(180, 22);
-            viewRevenueToolStripMenuItem.Text = "View Revenue";
+            mnuListSale.Name = "mnuListSale";
+            mnuListSale.Size = new Size(180, 22);
+            mnuListSale.Text = "List Sale";
             // 
-            // exitToolStripMenuItem
+            // mnuRmvSale
             // 
-            exitToolStripMenuItem.Alignment = ToolStripItemAlignment.Right;
-            exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            exitToolStripMenuItem.Size = new Size(37, 20);
-            exitToolStripMenuItem.Text = "Exit";
+            mnuRmvSale.Name = "mnuRmvSale";
+            mnuRmvSale.Size = new Size(180, 22);
+            mnuRmvSale.Text = "Remove Sale";
             // 
-            // removeSupplierToolStripMenuItem1
+            // mnuRevenue
             // 
-            removeSupplierToolStripMenuItem1.Name = "removeSupplierToolStripMenuItem1";
-            removeSupplierToolStripMenuItem1.Size = new Size(180, 22);
-            removeSupplierToolStripMenuItem1.Text = "Remove Supplier";
+            mnuRevenue.DropDownItems.AddRange(new ToolStripItem[] { mnuViewRevenue });
+            mnuRevenue.Name = "mnuRevenue";
+            mnuRevenue.Size = new Size(64, 20);
+            mnuRevenue.Text = "Revenue";
             // 
-            // removeSaleToolStripMenuItem1
+            // mnuViewRevenue
             // 
-            removeSaleToolStripMenuItem1.Name = "removeSaleToolStripMenuItem1";
-            removeSaleToolStripMenuItem1.Size = new Size(141, 22);
-            removeSaleToolStripMenuItem1.Text = "Remove Sale";
+            mnuViewRevenue.Name = "mnuViewRevenue";
+            mnuViewRevenue.Size = new Size(180, 22);
+            mnuViewRevenue.Text = "View Revenue";
+            // 
+            // mnuStripExit
+            // 
+            mnuStripExit.Alignment = ToolStripItemAlignment.Right;
+            mnuStripExit.Name = "mnuStripExit";
+            mnuStripExit.Size = new Size(37, 20);
+            mnuStripExit.Text = "Exit";
             // 
             // FormSuppliersApp
             // 
@@ -183,22 +190,23 @@
         #endregion
 
         private MenuStrip menuStrip1;
-        private ToolStripMenuItem stockToolStripMenuItem;
-        private ToolStripMenuItem addStockToolStripMenuItem;
-        private ToolStripMenuItem updateStockToolStripMenuItem;
-        private ToolStripMenuItem removeStockToolStripMenuItem;
-        private ToolStripMenuItem supplierToolStripMenuItem;
-        private ToolStripMenuItem addSupplierToolStripMenuItem;
-        private ToolStripMenuItem updateSupplierToolStripMenuItem;
-        private ToolStripMenuItem removeSupplierToolStripMenuItem;
-        private ToolStripMenuItem saleToolStripMenuItem;
-        private ToolStripMenuItem addSaleToolStripMenuItem;
-        private ToolStripMenuItem updateSaleToolStripMenuItem;
-        private ToolStripMenuItem removeSaleToolStripMenuItem;
-        private ToolStripMenuItem revenueToolStripMenuItem;
-        private ToolStripMenuItem viewRevenueToolStripMenuItem;
-        private ToolStripMenuItem exitToolStripMenuItem;
-        private ToolStripMenuItem removeSupplierToolStripMenuItem1;
-        private ToolStripMenuItem removeSaleToolStripMenuItem1;
+        private ToolStripMenuItem mnuStock;
+        private ToolStripMenuItem mnuAddStock;
+        private ToolStripMenuItem mnuUpdStock;
+        private ToolStripMenuItem mnuListStock;
+        private ToolStripMenuItem mnuSupplier;
+        private ToolStripMenuItem mnuAddSupp;
+        private ToolStripMenuItem mnuUpdSupp;
+        private ToolStripMenuItem mnuListSupp;
+        private ToolStripMenuItem mnuSale;
+        private ToolStripMenuItem mnuAddSale;
+        private ToolStripMenuItem mnuUpdSale;
+        private ToolStripMenuItem mnuListSale;
+        private ToolStripMenuItem mnuRevenue;
+        private ToolStripMenuItem mnuViewRevenue;
+        private ToolStripMenuItem mnuStripExit;
+        private ToolStripMenuItem mnuRmvSupp;
+        private ToolStripMenuItem mnuRmvSale;
+        private ToolStripMenuItem mnuRmvStock;
     }
 }
