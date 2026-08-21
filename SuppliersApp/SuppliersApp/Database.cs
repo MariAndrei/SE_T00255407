@@ -1,69 +1,88 @@
-﻿using System;
+﻿using Oracle.ManagedDataAccess.Client;
+using System;
 using System.Data;
-using Oracle.ManagedDataAccess.Client;
 
 namespace SuppliersApp
 {
     class Database
     {
-        private const string ConnectionString =
-            "Data Source=localhost:1521/orcl;User Id=C##User1;Password=Oracle123456;";
+        public const string connectionString =
+            "Data Source = localhost/orcl; User Id = C##User1; Password = Oracle123456;";
 
+        // Open an Oracle DB connection
         public static OracleConnection OpenConnection()
         {
-            OracleConnection connection = new OracleConnection(ConnectionString);
-            connection.Open();
-            return connection;
+            OracleConnection conn =
+                new OracleConnection(Database.connectionString);
+
+            conn.Open();
+
+            return conn;
         }
 
-        
         public static DataSet ExecuteMultiRowQuery(string query)
         {
-            using (OracleConnection connection = OpenConnection())
-            {
-                using (OracleDataAdapter adapter = new OracleDataAdapter(query, connection))
-                {
-                    DataSet dataSet = new DataSet();
-                    adapter.Fill(dataSet);
-                    return dataSet;
-                }
-            }
+            // Open a connection to an Oracle database
+            OracleConnection conn = OpenConnection();
+
+            OracleCommand cmd = new OracleCommand(query, conn);
+
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+
+            DataSet ds = new DataSet();
+
+
+            da.Fill(ds);
+
+            conn.Close();
+
+            return ds;
         }
 
-        
         public static DataRow ExecuteSingleRowQuery(string query)
         {
-            using (OracleConnection connection = OpenConnection())
-            {
-                using (OracleCommand command = new OracleCommand(query, connection))
-                {
-                    using (OracleDataAdapter adapter = new OracleDataAdapter(command))
-                    {
-                        DataTable dt = new DataTable();
-                        adapter.Fill(dt);
-                        return dt.Rows.Count > 0 ? dt.Rows[0] : null;
-                    }
-                }
-            }
+            // Open a connection to an Oracle database
+            OracleConnection conn = OpenConnection();
+
+            OracleCommand cmd = new OracleCommand(query, conn);
+
+            OracleDataAdapter da = new OracleDataAdapter(cmd);
+
+            DataTable dt = new DataTable();
+
+
+            da.Fill(dt);
+
+            conn.Close();
+
+            if (dt.Rows.Count > 0)
+                return dt.Rows[0];
+            else
+                return null;
         }
 
-        
         public static void ExecuteNonQuery(string query)
         {
-            using (OracleConnection connection = OpenConnection())
-            {
-                using (OracleCommand command = new OracleCommand(query, connection))
-                {
-                    command.ExecuteNonQuery();
-                }
-            }
+            OracleConnection conn = OpenConnection();
+
+            OracleCommand cmd = new OracleCommand(query, conn);
+
+            cmd.ExecuteNonQuery();
+
+            conn.Close();
         }
 
-        
         public static int GetNextID(string tableName, string primaryKeyColumn)
         {
-            string sqlQuery = "SELECT NVL(MAX(" + primaryKeyColumn + "), 0) + 1 FROM " + tableName;
+            // Define the SQL query
+            string sqlQuery =
+                "SELECT NVL(MAX(" + primaryKeyColumn + "), 0) + 1 " +
+                "FROM " + tableName;
+
+            // Execute the query
             DataRow row = ExecuteSingleRowQuery(sqlQuery);
+
+            // Return the next ID
             return Convert.ToInt32(row[0]);
         }
     }
