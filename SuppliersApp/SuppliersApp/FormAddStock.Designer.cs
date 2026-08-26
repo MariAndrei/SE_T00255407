@@ -42,6 +42,8 @@
             lblDescription = new Label();
             lblPrice = new Label();
             lblQty = new Label();
+            cboSupplier = new ComboBox();
+            lblSupplier = new Label();
             mnuStrip.SuspendLayout();
             SuspendLayout();
             // 
@@ -52,35 +54,35 @@
             // 
             // txtQty
             // 
-            txtQty.Location = new Point(122, 286);
+            txtQty.Location = new Point(126, 314);
             txtQty.Name = "txtQty";
             txtQty.Size = new Size(100, 23);
             txtQty.TabIndex = 1;
             // 
             // txtStockID
             // 
-            txtStockID.Location = new Point(122, 88);
+            txtStockID.Location = new Point(126, 116);
             txtStockID.Name = "txtStockID";
             txtStockID.Size = new Size(100, 23);
             txtStockID.TabIndex = 2;
             // 
             // txtDescription
             // 
-            txtDescription.Location = new Point(122, 151);
+            txtDescription.Location = new Point(126, 179);
             txtDescription.Name = "txtDescription";
             txtDescription.Size = new Size(100, 23);
             txtDescription.TabIndex = 3;
             // 
             // txtPrice
             // 
-            txtPrice.Location = new Point(122, 216);
+            txtPrice.Location = new Point(126, 244);
             txtPrice.Name = "txtPrice";
             txtPrice.Size = new Size(100, 23);
             txtPrice.TabIndex = 4;
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(344, 358);
+            btnAdd.Location = new Point(344, 381);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(75, 23);
             btnAdd.TabIndex = 5;
@@ -113,7 +115,7 @@
             // lblStockID
             // 
             lblStockID.AutoSize = true;
-            lblStockID.Location = new Point(45, 94);
+            lblStockID.Location = new Point(49, 122);
             lblStockID.Name = "lblStockID";
             lblStockID.Size = new Size(50, 15);
             lblStockID.TabIndex = 8;
@@ -122,7 +124,7 @@
             // lblDescription
             // 
             lblDescription.AutoSize = true;
-            lblDescription.Location = new Point(45, 154);
+            lblDescription.Location = new Point(49, 182);
             lblDescription.Name = "lblDescription";
             lblDescription.Size = new Size(67, 15);
             lblDescription.TabIndex = 9;
@@ -131,7 +133,7 @@
             // lblPrice
             // 
             lblPrice.AutoSize = true;
-            lblPrice.Location = new Point(45, 219);
+            lblPrice.Location = new Point(49, 247);
             lblPrice.Name = "lblPrice";
             lblPrice.Size = new Size(33, 15);
             lblPrice.TabIndex = 10;
@@ -140,17 +142,37 @@
             // lblQty
             // 
             lblQty.AutoSize = true;
-            lblQty.Location = new Point(45, 289);
+            lblQty.Location = new Point(49, 317);
             lblQty.Name = "lblQty";
             lblQty.Size = new Size(53, 15);
             lblQty.TabIndex = 11;
             lblQty.Text = "Quantity";
+            // 
+            // cboSupplier
+            // 
+            cboSupplier.FormattingEnabled = true;
+            cboSupplier.Location = new Point(344, 53);
+            cboSupplier.Name = "cboSupplier";
+            cboSupplier.Size = new Size(121, 23);
+            cboSupplier.TabIndex = 12;
+            cboSupplier.SelectedIndexChanged += cboSupplier_SelectedIndexChanged;
+            // 
+            // lblSupplier
+            // 
+            lblSupplier.AutoSize = true;
+            lblSupplier.Location = new Point(255, 56);
+            lblSupplier.Name = "lblSupplier";
+            lblSupplier.Size = new Size(55, 15);
+            lblSupplier.TabIndex = 13;
+            lblSupplier.Text = "Suppliers";
             // 
             // FormAddStock
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(lblSupplier);
+            Controls.Add(cboSupplier);
             Controls.Add(lblQty);
             Controls.Add(lblPrice);
             Controls.Add(lblDescription);
@@ -186,5 +208,7 @@
         private Label lblPrice;
         private Label lblQty;
         private ToolStripMenuItem mnuStripBack;
+        private ComboBox cboSupplier;
+        private Label lblSupplier;
     }
 }

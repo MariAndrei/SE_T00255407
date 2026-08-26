@@ -46,13 +46,13 @@
             mnuRmvSale = new ToolStripMenuItem();
             mnuRevenue = new ToolStripMenuItem();
             mnuViewRevenue = new ToolStripMenuItem();
-            mnuStripExit = new ToolStripMenuItem();
+            mnuExit = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
             // 
-            menuStrip1.Items.AddRange(new ToolStripItem[] { mnuStock, mnuSupplier, mnuSale, mnuRevenue, mnuStripExit });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { mnuStock, mnuSupplier, mnuSale, mnuRevenue, mnuExit });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Size = new Size(800, 24);
@@ -65,30 +65,35 @@
             mnuStock.Name = "mnuStock";
             mnuStock.Size = new Size(48, 20);
             mnuStock.Text = "Stock";
+            mnuStock.Click += mnuStock_Click;
             // 
             // mnuAddStock
             // 
             mnuAddStock.Name = "mnuAddStock";
             mnuAddStock.Size = new Size(180, 22);
             mnuAddStock.Text = "Add Stock";
+            mnuAddStock.Click += mnuAddStock_Click;
             // 
             // mnuUpdStock
             // 
             mnuUpdStock.Name = "mnuUpdStock";
             mnuUpdStock.Size = new Size(180, 22);
             mnuUpdStock.Text = "Update Stock";
+            mnuUpdStock.Click += mnuUpdStock_Click;
             // 
             // mnuListStock
             // 
             mnuListStock.Name = "mnuListStock";
             mnuListStock.Size = new Size(180, 22);
             mnuListStock.Text = "List Stock";
+            mnuListStock.Click += mnuListStock_Click;
             // 
             // mnuRmvStock
             // 
             mnuRmvStock.Name = "mnuRmvStock";
             mnuRmvStock.Size = new Size(180, 22);
             mnuRmvStock.Text = "Remove Stock";
+            mnuRmvStock.Click += mnuRmvStock_Click;
             // 
             // mnuSupplier
             // 
@@ -131,25 +136,25 @@
             // mnuAddSale
             // 
             mnuAddSale.Name = "mnuAddSale";
-            mnuAddSale.Size = new Size(180, 22);
+            mnuAddSale.Size = new Size(141, 22);
             mnuAddSale.Text = "Add Sale";
             // 
             // mnuUpdSale
             // 
             mnuUpdSale.Name = "mnuUpdSale";
-            mnuUpdSale.Size = new Size(180, 22);
+            mnuUpdSale.Size = new Size(141, 22);
             mnuUpdSale.Text = "Update Sale";
             // 
             // mnuListSale
             // 
             mnuListSale.Name = "mnuListSale";
-            mnuListSale.Size = new Size(180, 22);
+            mnuListSale.Size = new Size(141, 22);
             mnuListSale.Text = "List Sale";
             // 
             // mnuRmvSale
             // 
             mnuRmvSale.Name = "mnuRmvSale";
-            mnuRmvSale.Size = new Size(180, 22);
+            mnuRmvSale.Size = new Size(141, 22);
             mnuRmvSale.Text = "Remove Sale";
             // 
             // mnuRevenue
@@ -162,15 +167,16 @@
             // mnuViewRevenue
             // 
             mnuViewRevenue.Name = "mnuViewRevenue";
-            mnuViewRevenue.Size = new Size(180, 22);
+            mnuViewRevenue.Size = new Size(147, 22);
             mnuViewRevenue.Text = "View Revenue";
             // 
-            // mnuStripExit
+            // mnuExit
             // 
-            mnuStripExit.Alignment = ToolStripItemAlignment.Right;
-            mnuStripExit.Name = "mnuStripExit";
-            mnuStripExit.Size = new Size(37, 20);
-            mnuStripExit.Text = "Exit";
+            mnuExit.Alignment = ToolStripItemAlignment.Right;
+            mnuExit.Name = "mnuExit";
+            mnuExit.Size = new Size(37, 20);
+            mnuExit.Text = "Exit";
+            mnuExit.Click += mnuExit_Click;
             // 
             // FormSuppliersApp
             // 
@@ -204,7 +210,7 @@
         private ToolStripMenuItem mnuListSale;
         private ToolStripMenuItem mnuRevenue;
         private ToolStripMenuItem mnuViewRevenue;
-        private ToolStripMenuItem mnuStripExit;
+        private ToolStripMenuItem mnuExit;
         private ToolStripMenuItem mnuRmvSupp;
         private ToolStripMenuItem mnuRmvSale;
         private ToolStripMenuItem mnuRmvStock;

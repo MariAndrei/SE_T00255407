@@ -42,5 +42,10 @@ namespace SuppliersApp
         {
             Close();
         }
+
+        private void cboSupplier_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

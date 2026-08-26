@@ -31,23 +31,23 @@
             components = new System.ComponentModel.Container();
             btnAdd = new Button();
             contextMenuStrip1 = new ContextMenuStrip(components);
-            txtPrice = new TextBox();
-            txtDescription = new TextBox();
-            txtStockID = new TextBox();
-            txtQty = new TextBox();
+            txtEmail = new TextBox();
+            txtName = new TextBox();
+            txtSupplierID = new TextBox();
+            txtPhone = new TextBox();
             mnuStrip = new MenuStrip();
-            mnuStripBack = new ToolStripMenuItem();
+            mnuBack = new ToolStripMenuItem();
             contextMenuStrip2 = new ContextMenuStrip(components);
-            lblQty = new Label();
-            lblPrice = new Label();
-            lblDescription = new Label();
-            lblStockID = new Label();
+            lblPhone = new Label();
+            lblEmail = new Label();
+            lblName = new Label();
+            lblSupplierID = new Label();
             mnuStrip.SuspendLayout();
             SuspendLayout();
             // 
             // btnAdd
             // 
-            btnAdd.Location = new Point(344, 393);
+            btnAdd.Location = new Point(337, 326);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(75, 23);
             btnAdd.TabIndex = 16;
@@ -59,90 +59,90 @@
             contextMenuStrip1.Name = "contextMenuStrip1";
             contextMenuStrip1.Size = new Size(61, 4);
             // 
-            // txtPrice
+            // txtEmail
             // 
-            txtPrice.Location = new Point(122, 251);
-            txtPrice.Name = "txtPrice";
-            txtPrice.Size = new Size(100, 23);
-            txtPrice.TabIndex = 15;
+            txtEmail.Location = new Point(115, 184);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(100, 23);
+            txtEmail.TabIndex = 15;
             // 
-            // txtDescription
+            // txtName
             // 
-            txtDescription.Location = new Point(122, 186);
-            txtDescription.Name = "txtDescription";
-            txtDescription.Size = new Size(100, 23);
-            txtDescription.TabIndex = 14;
+            txtName.Location = new Point(115, 119);
+            txtName.Name = "txtName";
+            txtName.Size = new Size(100, 23);
+            txtName.TabIndex = 14;
             // 
-            // txtStockID
+            // txtSupplierID
             // 
-            txtStockID.Location = new Point(122, 123);
-            txtStockID.Name = "txtStockID";
-            txtStockID.Size = new Size(100, 23);
-            txtStockID.TabIndex = 13;
+            txtSupplierID.Location = new Point(115, 56);
+            txtSupplierID.Name = "txtSupplierID";
+            txtSupplierID.Size = new Size(100, 23);
+            txtSupplierID.TabIndex = 13;
             // 
-            // txtQty
+            // txtPhone
             // 
-            txtQty.Location = new Point(122, 321);
-            txtQty.Name = "txtQty";
-            txtQty.Size = new Size(100, 23);
-            txtQty.TabIndex = 12;
+            txtPhone.Location = new Point(115, 254);
+            txtPhone.Name = "txtPhone";
+            txtPhone.Size = new Size(100, 23);
+            txtPhone.TabIndex = 12;
             // 
             // mnuStrip
             // 
-            mnuStrip.Items.AddRange(new ToolStripItem[] { mnuStripBack });
+            mnuStrip.Items.AddRange(new ToolStripItem[] { mnuBack });
             mnuStrip.Location = new Point(0, 0);
             mnuStrip.Name = "mnuStrip";
             mnuStrip.Size = new Size(800, 24);
             mnuStrip.TabIndex = 17;
             mnuStrip.Text = "menuStrip1";
             // 
-            // mnuStripBack
+            // mnuBack
             // 
-            mnuStripBack.Alignment = ToolStripItemAlignment.Right;
-            mnuStripBack.Name = "mnuStripBack";
-            mnuStripBack.Size = new Size(44, 20);
-            mnuStripBack.Text = "Back";
+            mnuBack.Alignment = ToolStripItemAlignment.Right;
+            mnuBack.Name = "mnuBack";
+            mnuBack.Size = new Size(44, 20);
+            mnuBack.Text = "Back";
             // 
             // contextMenuStrip2
             // 
             contextMenuStrip2.Name = "contextMenuStrip2";
             contextMenuStrip2.Size = new Size(61, 4);
             // 
-            // lblQty
+            // lblPhone
             // 
-            lblQty.AutoSize = true;
-            lblQty.Location = new Point(45, 324);
-            lblQty.Name = "lblQty";
-            lblQty.Size = new Size(53, 15);
-            lblQty.TabIndex = 21;
-            lblQty.Text = "Quantity";
+            lblPhone.AutoSize = true;
+            lblPhone.Location = new Point(38, 257);
+            lblPhone.Name = "lblPhone";
+            lblPhone.Size = new Size(41, 15);
+            lblPhone.TabIndex = 21;
+            lblPhone.Text = "Phone";
             // 
-            // lblPrice
+            // lblEmail
             // 
-            lblPrice.AutoSize = true;
-            lblPrice.Location = new Point(45, 254);
-            lblPrice.Name = "lblPrice";
-            lblPrice.Size = new Size(33, 15);
-            lblPrice.TabIndex = 20;
-            lblPrice.Text = "Price";
+            lblEmail.AutoSize = true;
+            lblEmail.Location = new Point(38, 187);
+            lblEmail.Name = "lblEmail";
+            lblEmail.Size = new Size(36, 15);
+            lblEmail.TabIndex = 20;
+            lblEmail.Text = "Email";
             // 
-            // lblDescription
+            // lblName
             // 
-            lblDescription.AutoSize = true;
-            lblDescription.Location = new Point(45, 189);
-            lblDescription.Name = "lblDescription";
-            lblDescription.Size = new Size(67, 15);
-            lblDescription.TabIndex = 19;
-            lblDescription.Text = "Description";
+            lblName.AutoSize = true;
+            lblName.Location = new Point(38, 122);
+            lblName.Name = "lblName";
+            lblName.Size = new Size(39, 15);
+            lblName.TabIndex = 19;
+            lblName.Text = "Name";
             // 
-            // lblStockID
+            // lblSupplierID
             // 
-            lblStockID.AutoSize = true;
-            lblStockID.Location = new Point(45, 129);
-            lblStockID.Name = "lblStockID";
-            lblStockID.Size = new Size(45, 15);
-            lblStockID.TabIndex = 18;
-            lblStockID.Text = "SuppID";
+            lblSupplierID.AutoSize = true;
+            lblSupplierID.Location = new Point(38, 62);
+            lblSupplierID.Name = "lblSupplierID";
+            lblSupplierID.Size = new Size(45, 15);
+            lblSupplierID.TabIndex = 18;
+            lblSupplierID.Text = "SuppID";
             // 
             // FormAddSupplier
             // 
@@ -150,15 +150,15 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(btnAdd);
-            Controls.Add(txtPrice);
-            Controls.Add(txtDescription);
-            Controls.Add(txtStockID);
-            Controls.Add(txtQty);
+            Controls.Add(txtEmail);
+            Controls.Add(txtName);
+            Controls.Add(txtSupplierID);
+            Controls.Add(txtPhone);
             Controls.Add(mnuStrip);
-            Controls.Add(lblQty);
-            Controls.Add(lblPrice);
-            Controls.Add(lblDescription);
-            Controls.Add(lblStockID);
+            Controls.Add(lblPhone);
+            Controls.Add(lblEmail);
+            Controls.Add(lblName);
+            Controls.Add(lblSupplierID);
             Name = "FormAddSupplier";
             Text = "FormAddSupplier";
             mnuStrip.ResumeLayout(false);
@@ -171,16 +171,16 @@
 
         private Button btnAdd;
         private ContextMenuStrip contextMenuStrip1;
-        private TextBox txtPrice;
-        private TextBox txtDescription;
-        private TextBox txtStockID;
-        private TextBox txtQty;
+        private TextBox txtEmail;
+        private TextBox txtName;
+        private TextBox txtSupplierID;
+        private TextBox txtPhone;
         private MenuStrip mnuStrip;
-        private ToolStripMenuItem mnuStripBack;
+        private ToolStripMenuItem mnuBack;
         private ContextMenuStrip contextMenuStrip2;
-        private Label lblQty;
-        private Label lblPrice;
-        private Label lblDescription;
-        private Label lblStockID;
+        private Label lblPhone;
+        private Label lblEmail;
+        private Label lblName;
+        private Label lblSupplierID;
     }
 }

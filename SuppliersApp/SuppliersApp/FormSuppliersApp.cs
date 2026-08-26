@@ -16,5 +16,35 @@ namespace SuppliersApp
         {
             InitializeComponent();
         }
+
+        private void mnuStock_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mnuAddStock_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mnuUpdStock_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mnuListStock_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mnuRmvStock_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void mnuExit_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
