@@ -14,11 +14,6 @@ namespace SuppliersApp
     {
         FormSuppliersApp parent;
 
-        public FormAddSupplier()
-        {
-            InitializeComponent();
-        }
-
         public FormAddSupplier(FormSuppliersApp Parent)
         {
             InitializeComponent();
@@ -30,6 +25,7 @@ namespace SuppliersApp
             this.Close();
             parent.Visible = true;
         }
+
 
         private void FormAddSupplier_Load(object sender, EventArgs e)
         {
@@ -47,7 +43,8 @@ namespace SuppliersApp
                 Convert.ToInt32(txtSupplierID.Text),
                 txtName.Text,
                 txtEmail.Text,
-                txtPhone.Text
+                txtPhone.Text,
+                txtManufacturer.Text
             );
 
             // Add Supplier to database
@@ -75,5 +72,7 @@ namespace SuppliersApp
 
             txtName.Focus();
         }
+
+
     }
 }

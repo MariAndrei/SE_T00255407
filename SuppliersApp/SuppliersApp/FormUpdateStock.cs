@@ -1,20 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SuppliersApp
 {
     public partial class FormUpdateStock : Form
     {
-        public FormUpdateStock()
+        private FormSuppliersApp parent;
+
+        public FormUpdateStock(FormSuppliersApp Parent)
         {
             InitializeComponent();
+            parent = Parent;
         }
+
     }
 }

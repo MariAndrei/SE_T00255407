@@ -5,43 +5,79 @@ namespace SuppliersApp
 {
     public class Sale
     {
+        // Properties
         public int SaleID { get; set; }
         public int StockID { get; set; }
-        public int QuantitySold { get; set; }
-        public decimal TotalAmount { get; set; }
+        public int Qty { get; set; }
+        public decimal Total { get; set; }
         public DateTime SaleDate { get; set; }
 
-        public Sale() : this(0, 0, 0, 0, DateTime.Now) { }
+        // No-argument constructor
+        public Sale() : this(0, 0, 0, 0, DateTime.Now)
+        {
+        }
 
-        public Sale(int saleID, int stockID, int quantitySold, decimal totalAmount, DateTime saleDate)
+        // Full constructor
+        public Sale(int saleID, int stockID, int qty,
+                    decimal total, DateTime saleDate)
         {
             SaleID = saleID;
             StockID = stockID;
-            QuantitySold = quantitySold;
-            TotalAmount = totalAmount;
+            Qty = qty;
+            Total = total;
             SaleDate = saleDate;
         }
 
+        // Add Sale
         public void AddSale()
         {
             string formattedDate = SaleDate.ToString("dd-MMM-yyyy");
 
-            string sqlQuery = "INSERT INTO Sales VALUES(" +
+            string sqlQuery =
+                "INSERT INTO Sales (SaleID, StockID, Qty, Total, SaleDate) VALUES (" +
                 SaleID + "," +
                 StockID + "," +
-                QuantitySold + "," +
-                TotalAmount + ",'" +
+                Qty + "," +
+                Total + ",'" +
                 formattedDate + "')";
 
             Database.ExecuteNonQuery(sqlQuery);
         }
 
+        // Get all Sales
         public static DataSet GetAllSales()
         {
-            string sqlQuery = "SELECT SaleID, StockID, QuantitySold, TotalAmount, SaleDate FROM Sales ORDER BY SaleDate DESC";
+            string sqlQuery =
+                "SELECT SaleID, StockID, Qty, Total, SaleDate " +
+                "FROM Sales ORDER BY SaleID";
+
             return Database.ExecuteMultiRowQuery(sqlQuery);
         }
 
+        // Get one Sale
+        public static Sale GetSale(int id)
+        {
+            string sqlQuery =
+                "SELECT SaleID, StockID, Qty, Total, SaleDate " +
+                "FROM Sales WHERE SaleID = " + id;
+
+            DataRow row = Database.ExecuteSingleRowQuery(sqlQuery);
+
+            if (row != null)
+            {
+                return new Sale(
+                    Convert.ToInt32(row["SaleID"]),
+                    Convert.ToInt32(row["StockID"]),
+                    Convert.ToInt32(row["Qty"]),
+                    Convert.ToDecimal(row["Total"]),
+                    Convert.ToDateTime(row["SaleDate"])
+                );
+            }
+
+            return null;
+        }
+
+        // Get next Sale ID
         public static int GetNextSaleID()
         {
             return Database.GetNextID("Sales", "SaleID");

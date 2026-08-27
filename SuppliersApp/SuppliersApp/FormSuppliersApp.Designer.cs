@@ -101,30 +101,34 @@
             mnuSupplier.Name = "mnuSupplier";
             mnuSupplier.Size = new Size(62, 20);
             mnuSupplier.Text = "Supplier";
+            mnuSupplier.Click += mnuSupplier_Click;
             // 
             // mnuAddSupp
             // 
             mnuAddSupp.Name = "mnuAddSupp";
-            mnuAddSupp.Size = new Size(163, 22);
+            mnuAddSupp.Size = new Size(180, 22);
             mnuAddSupp.Text = "Add Supplier";
             // 
             // mnuUpdSupp
             // 
             mnuUpdSupp.Name = "mnuUpdSupp";
-            mnuUpdSupp.Size = new Size(163, 22);
+            mnuUpdSupp.Size = new Size(180, 22);
             mnuUpdSupp.Text = "Update Supplier";
+            mnuUpdSupp.Click += mnuUpdSupp_Click;
             // 
             // mnuListSupp
             // 
             mnuListSupp.Name = "mnuListSupp";
-            mnuListSupp.Size = new Size(163, 22);
+            mnuListSupp.Size = new Size(180, 22);
             mnuListSupp.Text = "List Supplier";
+            mnuListSupp.Click += mnuListSupp_Click;
             // 
             // mnuRmvSupp
             // 
             mnuRmvSupp.Name = "mnuRmvSupp";
-            mnuRmvSupp.Size = new Size(163, 22);
+            mnuRmvSupp.Size = new Size(180, 22);
             mnuRmvSupp.Text = "Remove Supplier";
+            mnuRmvSupp.Click += mnuRmvSupp_Click;
             // 
             // mnuSale
             // 
@@ -132,30 +136,35 @@
             mnuSale.Name = "mnuSale";
             mnuSale.Size = new Size(40, 20);
             mnuSale.Text = "Sale";
+            mnuSale.Click += mnuSale_Click;
             // 
             // mnuAddSale
             // 
             mnuAddSale.Name = "mnuAddSale";
-            mnuAddSale.Size = new Size(141, 22);
+            mnuAddSale.Size = new Size(180, 22);
             mnuAddSale.Text = "Add Sale";
+            mnuAddSale.Click += mnuAddSale_Click;
             // 
             // mnuUpdSale
             // 
             mnuUpdSale.Name = "mnuUpdSale";
-            mnuUpdSale.Size = new Size(141, 22);
+            mnuUpdSale.Size = new Size(180, 22);
             mnuUpdSale.Text = "Update Sale";
+            mnuUpdSale.Click += mnuUpdSale_Click;
             // 
             // mnuListSale
             // 
             mnuListSale.Name = "mnuListSale";
-            mnuListSale.Size = new Size(141, 22);
+            mnuListSale.Size = new Size(180, 22);
             mnuListSale.Text = "List Sale";
+            mnuListSale.Click += mnuListSale_Click;
             // 
             // mnuRmvSale
             // 
             mnuRmvSale.Name = "mnuRmvSale";
-            mnuRmvSale.Size = new Size(141, 22);
+            mnuRmvSale.Size = new Size(180, 22);
             mnuRmvSale.Text = "Remove Sale";
+            mnuRmvSale.Click += mnuRmvSale_Click;
             // 
             // mnuRevenue
             // 
@@ -167,8 +176,9 @@
             // mnuViewRevenue
             // 
             mnuViewRevenue.Name = "mnuViewRevenue";
-            mnuViewRevenue.Size = new Size(147, 22);
+            mnuViewRevenue.Size = new Size(180, 22);
             mnuViewRevenue.Text = "View Revenue";
+            mnuViewRevenue.Click += mnuViewRevenue_Click;
             // 
             // mnuExit
             // 

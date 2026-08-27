@@ -105,7 +105,7 @@
             mnuStripBack.Name = "mnuStripBack";
             mnuStripBack.Size = new Size(44, 20);
             mnuStripBack.Text = "Back";
-            mnuStripBack.Click += mnuStripBack_Click;
+            mnuStripBack.Click += mnuBack_Click;
             // 
             // contextMenuStrip2
             // 
@@ -155,7 +155,6 @@
             cboSupplier.Name = "cboSupplier";
             cboSupplier.Size = new Size(121, 23);
             cboSupplier.TabIndex = 12;
-            cboSupplier.SelectedIndexChanged += cboSupplier_SelectedIndexChanged;
             // 
             // lblSupplier
             // 

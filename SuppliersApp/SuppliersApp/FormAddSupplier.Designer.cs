@@ -42,6 +42,8 @@
             lblEmail = new Label();
             lblName = new Label();
             lblSupplierID = new Label();
+            lblManufacturer = new Label();
+            txtManufacturer = new TextBox();
             mnuStrip.SuspendLayout();
             SuspendLayout();
             // 
@@ -61,28 +63,28 @@
             // 
             // txtEmail
             // 
-            txtEmail.Location = new Point(115, 184);
+            txtEmail.Location = new Point(152, 147);
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(100, 23);
             txtEmail.TabIndex = 15;
             // 
             // txtName
             // 
-            txtName.Location = new Point(115, 119);
+            txtName.Location = new Point(152, 100);
             txtName.Name = "txtName";
             txtName.Size = new Size(100, 23);
             txtName.TabIndex = 14;
             // 
             // txtSupplierID
             // 
-            txtSupplierID.Location = new Point(115, 56);
+            txtSupplierID.Location = new Point(152, 56);
             txtSupplierID.Name = "txtSupplierID";
             txtSupplierID.Size = new Size(100, 23);
             txtSupplierID.TabIndex = 13;
             // 
             // txtPhone
             // 
-            txtPhone.Location = new Point(115, 254);
+            txtPhone.Location = new Point(152, 191);
             txtPhone.Name = "txtPhone";
             txtPhone.Size = new Size(100, 23);
             txtPhone.TabIndex = 12;
@@ -102,6 +104,7 @@
             mnuBack.Name = "mnuBack";
             mnuBack.Size = new Size(44, 20);
             mnuBack.Text = "Back";
+            mnuBack.Click += mnuBack_Click;
             // 
             // contextMenuStrip2
             // 
@@ -111,7 +114,7 @@
             // lblPhone
             // 
             lblPhone.AutoSize = true;
-            lblPhone.Location = new Point(38, 257);
+            lblPhone.Location = new Point(42, 194);
             lblPhone.Name = "lblPhone";
             lblPhone.Size = new Size(41, 15);
             lblPhone.TabIndex = 21;
@@ -120,7 +123,7 @@
             // lblEmail
             // 
             lblEmail.AutoSize = true;
-            lblEmail.Location = new Point(38, 187);
+            lblEmail.Location = new Point(41, 150);
             lblEmail.Name = "lblEmail";
             lblEmail.Size = new Size(36, 15);
             lblEmail.TabIndex = 20;
@@ -129,7 +132,7 @@
             // lblName
             // 
             lblName.AutoSize = true;
-            lblName.Location = new Point(38, 122);
+            lblName.Location = new Point(38, 103);
             lblName.Name = "lblName";
             lblName.Size = new Size(39, 15);
             lblName.TabIndex = 19;
@@ -144,11 +147,29 @@
             lblSupplierID.TabIndex = 18;
             lblSupplierID.Text = "SuppID";
             // 
+            // lblManufacturer
+            // 
+            lblManufacturer.AutoSize = true;
+            lblManufacturer.Location = new Point(42, 239);
+            lblManufacturer.Name = "lblManufacturer";
+            lblManufacturer.Size = new Size(92, 15);
+            lblManufacturer.TabIndex = 22;
+            lblManufacturer.Text = "lblManufacturer";
+            // 
+            // txtManufacturer
+            // 
+            txtManufacturer.Location = new Point(152, 236);
+            txtManufacturer.Name = "txtManufacturer";
+            txtManufacturer.Size = new Size(100, 23);
+            txtManufacturer.TabIndex = 23;
+            // 
             // FormAddSupplier
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(txtManufacturer);
+            Controls.Add(lblManufacturer);
             Controls.Add(btnAdd);
             Controls.Add(txtEmail);
             Controls.Add(txtName);
@@ -182,5 +203,7 @@
         private Label lblEmail;
         private Label lblName;
         private Label lblSupplierID;
+        private Label lblManufacturer;
+        private TextBox txtManufacturer;
     }
 }
