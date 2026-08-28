@@ -12,12 +12,10 @@ namespace SuppliersApp
         public decimal Total { get; set; }
         public DateTime SaleDate { get; set; }
 
-        // No-argument constructor
         public Sale() : this(0, 0, 0, 0, DateTime.Now)
         {
         }
 
-        // Full constructor
         public Sale(int saleID, int stockID, int qty,
                     decimal total, DateTime saleDate)
         {
@@ -28,7 +26,7 @@ namespace SuppliersApp
             SaleDate = saleDate;
         }
 
-        // Add Sale
+        // ADD SALE
         public void AddSale()
         {
             string formattedDate = SaleDate.ToString("dd-MMM-yyyy");
@@ -44,7 +42,7 @@ namespace SuppliersApp
             Database.ExecuteNonQuery(sqlQuery);
         }
 
-        // Get all Sales
+        // GET ALL SALES
         public static DataSet GetAllSales()
         {
             string sqlQuery =
@@ -54,7 +52,7 @@ namespace SuppliersApp
             return Database.ExecuteMultiRowQuery(sqlQuery);
         }
 
-        // Get one Sale
+        // GET ONE SALE
         public static Sale GetSale(int id)
         {
             string sqlQuery =
@@ -77,7 +75,35 @@ namespace SuppliersApp
             return null;
         }
 
-        // Get next Sale ID
+        // FIND SALE
+        public static DataSet FindSale(string search)
+        {
+            string sqlQuery =
+                "SELECT SaleID, StockID, Qty, Total, SaleDate " +
+                "FROM Sales " +
+                "WHERE SaleID LIKE '%" + search + "%' " +
+                "ORDER BY SaleID";
+
+            return Database.ExecuteMultiRowQuery(sqlQuery);
+        }
+
+        // UPDATE SALE
+        public void UpdateSale()
+        {
+            string formattedDate = SaleDate.ToString("dd-MMM-yyyy");
+
+            string sqlQuery =
+                "UPDATE Sales SET " +
+                "StockID = " + StockID + "," +
+                "Qty = " + Qty + "," +
+                "Total = " + Total + "," +
+                "SaleDate = '" + formattedDate + "' " +
+                "WHERE SaleID = " + SaleID;
+
+            Database.ExecuteNonQuery(sqlQuery);
+        }
+
+        // GET NEXT SALE ID
         public static int GetNextSaleID()
         {
             return Database.GetNextID("Sales", "SaleID");
