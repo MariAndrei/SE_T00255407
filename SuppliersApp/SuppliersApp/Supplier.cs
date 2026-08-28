@@ -7,16 +7,23 @@ namespace SuppliersApp
     {
         public int SuppID { get; set; }
         public string Name { get; set; }
+
+        // Keeping these names so your existing forms still work
         public string Email { get; set; }
         public string Phone { get; set; }
+
         public string Manufacturer { get; set; }
 
         public Supplier() : this(0, "", "", "", "")
         {
         }
 
-        public Supplier(int supplierID, string name, string email,
-                        string phone, string manufacturer)
+        public Supplier(
+            int supplierID,
+            string name,
+            string email,
+            string phone,
+            string manufacturer)
         {
             SuppID = supplierID;
             Name = name;
@@ -38,8 +45,9 @@ namespace SuppliersApp
         public static Supplier GetSupplier(int id)
         {
             string sqlQuery =
-                "SELECT SuppID, Name, Email, Phone, Manufacturer " +
-                "FROM Supplier WHERE SuppID = " + id;
+                "SELECT SuppID, Name, PhoneNo, Address, Manufacturer " +
+                "FROM Suppliers " +
+                "WHERE SuppID = " + id;
 
             DataRow row = Database.ExecuteSingleRowQuery(sqlQuery);
 
@@ -48,8 +56,13 @@ namespace SuppliersApp
                 return new Supplier(
                     Convert.ToInt32(row["SuppID"]),
                     row["Name"].ToString(),
-                    row["Email"].ToString(),
-                    row["Phone"].ToString(),
+
+                    // Email textbox/property currently stores Address
+                    row["Address"].ToString(),
+
+                    // Phone property stores PhoneNo
+                    row["PhoneNo"].ToString(),
+
                     row["Manufacturer"].ToString()
                 );
             }
@@ -60,17 +73,18 @@ namespace SuppliersApp
         public void AddSupplier()
         {
             string sqlQuery =
-                "INSERT INTO Supplier VALUES(" +
+                "INSERT INTO Suppliers " +
+                "(SuppID, Name, PhoneNo, Address, Manufacturer) VALUES (" +
                 SuppID + ",'" +
                 Name + "','" +
-                Email + "','" +
                 Phone + "','" +
+                Email + "','" +
                 Manufacturer + "')";
 
             Database.ExecuteNonQuery(sqlQuery);
         }
 
-                public void RemoveSupplier()
+        public void RemoveSupplier()
         {
             string sqlQuery =
                 "DELETE FROM Suppliers " +
@@ -82,10 +96,10 @@ namespace SuppliersApp
         public void UpdateSupplier()
         {
             string sqlQuery =
-                "UPDATE Supplier SET " +
+                "UPDATE Suppliers SET " +
                 "Name='" + Name + "'," +
-                "Email='" + Email + "'," +
-                "Phone='" + Phone + "'," +
+                "PhoneNo='" + Phone + "'," +
+                "Address='" + Email + "'," +
                 "Manufacturer='" + Manufacturer + "' " +
                 "WHERE SuppID=" + SuppID;
 
@@ -95,9 +109,9 @@ namespace SuppliersApp
         public static DataSet FindSupplier(string name)
         {
             string sqlQuery =
-                "SELECT SuppID, Name, Email, Phone, Manufacturer " +
-                "FROM Supplier " +
-                "WHERE Name LIKE '%" + name + "%' " +
+                "SELECT SuppID, Name, PhoneNo, Address, Manufacturer " +
+                "FROM Suppliers " +
+                "WHERE UPPER(Name) LIKE UPPER('%" + name + "%') " +
                 "ORDER BY Name";
 
             return Database.ExecuteMultiRowQuery(sqlQuery);
@@ -105,9 +119,7 @@ namespace SuppliersApp
 
         public static int GetNextSupplierID()
         {
-            return Database.GetNextID("Supplier", "SuppID");
+            return Database.GetNextID("Suppliers", "SuppID");
         }
-
-
     }
 }

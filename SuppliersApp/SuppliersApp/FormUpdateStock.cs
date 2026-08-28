@@ -44,6 +44,23 @@ namespace SuppliersApp
 
                 grdStock.DataSource = ds.Tables[0];
 
+                if (ds.Tables[0].Rows.Count > 0)
+                {
+                    grdStock.Visible = true;
+                }
+                else
+                {
+                    grdStock.Visible = false;
+                    grpStock.Visible = false;
+
+                    MessageBox.Show(
+                        "No stock found.",
+                        "Search",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                    );
+                }
+
                 e.SuppressKeyPress = true;
             }
         }

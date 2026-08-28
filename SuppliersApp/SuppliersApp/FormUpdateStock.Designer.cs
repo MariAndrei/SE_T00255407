@@ -78,6 +78,7 @@
             grdStock.Name = "grdStock";
             grdStock.Size = new Size(414, 93);
             grdStock.TabIndex = 11;
+            grdStock.CellContentClick += grdStock_CellContentClick;
             // 
             // btnUpdate
             // 

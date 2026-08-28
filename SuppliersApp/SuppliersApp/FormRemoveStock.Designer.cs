@@ -72,6 +72,7 @@
             grdStock.Name = "grdStock";
             grdStock.Size = new Size(494, 129);
             grdStock.TabIndex = 1;
+            grdStock.CellContentClick += grdStock_CellContentClick;
             // 
             // txtSearch
             // 
