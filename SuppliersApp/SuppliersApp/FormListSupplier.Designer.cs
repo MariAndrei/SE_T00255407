@@ -69,7 +69,7 @@
             MainMenuStrip = menuStrip1;
             Name = "FormListSupplier";
             Text = "FormListSupplier";
-            Load += FormListSupplier_Load_1;
+            Load += FormListSupplier_Load;
             ((System.ComponentModel.ISupportInitialize)grdSuppliers).EndInit();
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();

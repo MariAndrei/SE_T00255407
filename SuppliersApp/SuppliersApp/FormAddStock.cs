@@ -33,7 +33,7 @@ namespace SuppliersApp
             for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
             {
                 cboSupplier.Items.Add(
-                    ds.Tables[0].Rows[i]["SupplierID"] +
+                    ds.Tables[0].Rows[i]["SuppID"] +
                     " - " +
                     ds.Tables[0].Rows[i]["Name"]
                 );
@@ -48,7 +48,7 @@ namespace SuppliersApp
             if (cboSupplier.SelectedIndex >= 0)
             {
                 supplierID = Convert.ToInt32(
-                    cboSupplier.Text.Substring(0, 4)
+                cboSupplier.Text.Split('-')[0].Trim()
                 );
             }
             else

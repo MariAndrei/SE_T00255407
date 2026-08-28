@@ -151,7 +151,7 @@
             // cboSupplier
             // 
             cboSupplier.FormattingEnabled = true;
-            cboSupplier.Location = new Point(344, 53);
+            cboSupplier.Location = new Point(138, 53);
             cboSupplier.Name = "cboSupplier";
             cboSupplier.Size = new Size(121, 23);
             cboSupplier.TabIndex = 12;
@@ -159,7 +159,7 @@
             // lblSupplier
             // 
             lblSupplier.AutoSize = true;
-            lblSupplier.Location = new Point(255, 56);
+            lblSupplier.Location = new Point(49, 56);
             lblSupplier.Name = "lblSupplier";
             lblSupplier.Size = new Size(55, 15);
             lblSupplier.TabIndex = 13;

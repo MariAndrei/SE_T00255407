@@ -55,7 +55,7 @@ namespace SuppliersApp
             if (e.RowIndex < 0)
                 return;
 
-            // Get SupplierID
+            // Get SuppID
             int supplierID = Convert.ToInt32(
                 grdSuppliers.Rows[e.RowIndex].Cells[0].Value
             );

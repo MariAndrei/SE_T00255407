@@ -42,6 +42,16 @@ namespace SuppliersApp
             Database.ExecuteNonQuery(sqlQuery);
         }
 
+        // Remove Sale
+        public void RemoveSale()
+        {
+            string sqlQuery =
+                "DELETE FROM Sales " +
+                "WHERE SaleID = " + SaleID;
+
+            Database.ExecuteNonQuery(sqlQuery);
+        }
+
         // GET ALL SALES
         public static DataSet GetAllSales()
         {

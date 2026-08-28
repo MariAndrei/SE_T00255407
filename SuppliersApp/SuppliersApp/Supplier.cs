@@ -5,7 +5,7 @@ namespace SuppliersApp
 {
     public class Supplier
     {
-        public int SupplierID { get; set; }
+        public int SuppID { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
         public string Phone { get; set; }
@@ -18,7 +18,7 @@ namespace SuppliersApp
         public Supplier(int supplierID, string name, string email,
                         string phone, string manufacturer)
         {
-            SupplierID = supplierID;
+            SuppID = supplierID;
             Name = name;
             Email = email;
             Phone = phone;
@@ -28,8 +28,8 @@ namespace SuppliersApp
         public static DataSet GetAllSuppliers()
         {
             string sqlQuery =
-                "SELECT SupplierID, Name, Email, Phone, Manufacturer " +
-                "FROM Supplier ORDER BY SupplierID";
+                "SELECT SuppID, Name, Email, Phone, Manufacturer " +
+                "FROM Supplier ORDER BY SuppID";
 
             return Database.ExecuteMultiRowQuery(sqlQuery);
         }
@@ -37,15 +37,15 @@ namespace SuppliersApp
         public static Supplier GetSupplier(int id)
         {
             string sqlQuery =
-                "SELECT SupplierID, Name, Email, Phone, Manufacturer " +
-                "FROM Supplier WHERE SupplierID = " + id;
+                "SELECT SuppID, Name, Email, Phone, Manufacturer " +
+                "FROM Supplier WHERE SuppID = " + id;
 
             DataRow row = Database.ExecuteSingleRowQuery(sqlQuery);
 
             if (row != null)
             {
                 return new Supplier(
-                    Convert.ToInt32(row["SupplierID"]),
+                    Convert.ToInt32(row["SuppID"]),
                     row["Name"].ToString(),
                     row["Email"].ToString(),
                     row["Phone"].ToString(),
@@ -60,11 +60,20 @@ namespace SuppliersApp
         {
             string sqlQuery =
                 "INSERT INTO Supplier VALUES(" +
-                SupplierID + ",'" +
+                SuppID + ",'" +
                 Name + "','" +
                 Email + "','" +
                 Phone + "','" +
                 Manufacturer + "')";
+
+            Database.ExecuteNonQuery(sqlQuery);
+        }
+
+                public void RemoveSupplier()
+        {
+            string sqlQuery =
+                "DELETE FROM Suppliers " +
+                "WHERE SuppID = " + SuppID;
 
             Database.ExecuteNonQuery(sqlQuery);
         }
@@ -77,7 +86,7 @@ namespace SuppliersApp
                 "Email='" + Email + "'," +
                 "Phone='" + Phone + "'," +
                 "Manufacturer='" + Manufacturer + "' " +
-                "WHERE SupplierID=" + SupplierID;
+                "WHERE SuppID=" + SuppID;
 
             Database.ExecuteNonQuery(sqlQuery);
         }
@@ -85,7 +94,7 @@ namespace SuppliersApp
         public static DataSet FindSupplier(string name)
         {
             string sqlQuery =
-                "SELECT SupplierID, Name, Email, Phone, Manufacturer " +
+                "SELECT SuppID, Name, Email, Phone, Manufacturer " +
                 "FROM Supplier " +
                 "WHERE Name LIKE '%" + name + "%' " +
                 "ORDER BY Name";
@@ -95,7 +104,9 @@ namespace SuppliersApp
 
         public static int GetNextSupplierID()
         {
-            return Database.GetNextID("Supplier", "SupplierID");
+            return Database.GetNextID("Supplier", "SuppID");
         }
+
+
     }
 }

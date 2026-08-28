@@ -28,12 +28,60 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Revenue";
+            menuStrip1 = new MenuStrip();
+            mnuBack = new ToolStripMenuItem();
+            grdRevenue = new DataGridView();
+            menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)grdRevenue).BeginInit();
+            SuspendLayout();
+            // 
+            // menuStrip1
+            // 
+            menuStrip1.Items.AddRange(new ToolStripItem[] { mnuBack });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(800, 24);
+            menuStrip1.TabIndex = 0;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // mnuBack
+            // 
+            mnuBack.Alignment = ToolStripItemAlignment.Right;
+            mnuBack.Name = "mnuBack";
+            mnuBack.Size = new Size(44, 20);
+            mnuBack.Text = "Back";
+            mnuBack.Click += mnuBack_Click;
+            // 
+            // grdRevenue
+            // 
+            grdRevenue.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            grdRevenue.Location = new Point(69, 69);
+            grdRevenue.Name = "grdRevenue";
+            grdRevenue.Size = new Size(668, 284);
+            grdRevenue.TabIndex = 1;
+            // 
+            // FormViewRevenue
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(grdRevenue);
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
+            Name = "FormViewRevenue";
+            Text = "Revenue";
+            Load += FormViewRevenue_Load;
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)grdRevenue).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem mnuBack;
+        private DataGridView grdRevenue;
     }
 }

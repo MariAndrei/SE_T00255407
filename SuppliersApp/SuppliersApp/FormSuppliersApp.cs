@@ -12,16 +12,13 @@ namespace SuppliersApp
 
         // STOCK
 
-
         private void mnuStock_Click(object sender, EventArgs e)
         {
-          
         }
 
         private void mnuAddStock_Click(object sender, EventArgs e)
         {
             this.Hide();
-
             FormAddStock nextForm = new FormAddStock(this);
             nextForm.Show();
         }
@@ -29,7 +26,6 @@ namespace SuppliersApp
         private void mnuUpdStock_Click(object sender, EventArgs e)
         {
             this.Hide();
-
             FormUpdateStock nextForm = new FormUpdateStock(this);
             nextForm.Show();
         }
@@ -37,7 +33,6 @@ namespace SuppliersApp
         private void mnuListStock_Click(object sender, EventArgs e)
         {
             this.Hide();
-
             FormListStock nextForm = new FormListStock(this);
             nextForm.Show();
         }
@@ -45,25 +40,20 @@ namespace SuppliersApp
         private void mnuRmvStock_Click(object sender, EventArgs e)
         {
             this.Hide();
-
             FormRemoveStock nextForm = new FormRemoveStock(this);
             nextForm.Show();
         }
 
 
- 
-        // SUPPLIERS
-
+        // SUPPLIER
 
         private void mnuSupplier_Click(object sender, EventArgs e)
         {
-           
         }
 
         private void mnuAddSupp_Click(object sender, EventArgs e)
         {
             this.Hide();
-
             FormAddSupplier nextForm = new FormAddSupplier(this);
             nextForm.Show();
         }
@@ -71,7 +61,6 @@ namespace SuppliersApp
         private void mnuUpdSupp_Click(object sender, EventArgs e)
         {
             this.Hide();
-
             FormUpdateSupplier nextForm = new FormUpdateSupplier(this);
             nextForm.Show();
         }
@@ -79,7 +68,6 @@ namespace SuppliersApp
         private void mnuListSupp_Click(object sender, EventArgs e)
         {
             this.Hide();
-
             FormListSupplier nextForm = new FormListSupplier(this);
             nextForm.Show();
         }
@@ -87,25 +75,20 @@ namespace SuppliersApp
         private void mnuRmvSupp_Click(object sender, EventArgs e)
         {
             this.Hide();
-
             FormRemoveSupplier nextForm = new FormRemoveSupplier(this);
             nextForm.Show();
         }
 
 
-
-        // SALES
-
+        // SALE
 
         private void mnuSale_Click(object sender, EventArgs e)
         {
-           
         }
 
         private void mnuAddSale_Click(object sender, EventArgs e)
         {
             this.Hide();
-
             FormAddSale nextForm = new FormAddSale(this);
             nextForm.Show();
         }
@@ -113,7 +96,6 @@ namespace SuppliersApp
         private void mnuUpdSale_Click(object sender, EventArgs e)
         {
             this.Hide();
-
             FormUpdateSale nextForm = new FormUpdateSale(this);
             nextForm.Show();
         }
@@ -121,7 +103,6 @@ namespace SuppliersApp
         private void mnuListSale_Click(object sender, EventArgs e)
         {
             this.Hide();
-
             FormListSale nextForm = new FormListSale(this);
             nextForm.Show();
         }
@@ -129,7 +110,6 @@ namespace SuppliersApp
         private void mnuRmvSale_Click(object sender, EventArgs e)
         {
             this.Hide();
-
             FormRemoveSale nextForm = new FormRemoveSale(this);
             nextForm.Show();
         }
@@ -137,11 +117,9 @@ namespace SuppliersApp
 
         // REVENUE
 
-
         private void mnuViewRevenue_Click(object sender, EventArgs e)
         {
             this.Hide();
-
             FormViewRevenue nextForm = new FormViewRevenue(this);
             nextForm.Show();
         }
@@ -152,6 +130,11 @@ namespace SuppliersApp
         private void mnuExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void mnuRevenue_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

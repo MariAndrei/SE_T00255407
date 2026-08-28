@@ -28,12 +28,60 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "FormListStock";
+            grdStocks = new DataGridView();
+            menuStrip1 = new MenuStrip();
+            mnuBack = new ToolStripMenuItem();
+            ((System.ComponentModel.ISupportInitialize)grdStocks).BeginInit();
+            menuStrip1.SuspendLayout();
+            SuspendLayout();
+            // 
+            // grdStocks
+            // 
+            grdStocks.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            grdStocks.Location = new Point(78, 69);
+            grdStocks.Name = "grdStocks";
+            grdStocks.Size = new Size(645, 312);
+            grdStocks.TabIndex = 2;
+            // 
+            // menuStrip1
+            // 
+            menuStrip1.Items.AddRange(new ToolStripItem[] { mnuBack });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(800, 24);
+            menuStrip1.TabIndex = 3;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // mnuBack
+            // 
+            mnuBack.Alignment = ToolStripItemAlignment.Right;
+            mnuBack.Name = "mnuBack";
+            mnuBack.Size = new Size(44, 20);
+            mnuBack.Text = "Back";
+            mnuBack.Click += mnuBack_Click;
+            // 
+            // FormListStock
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(800, 450);
+            Controls.Add(grdStocks);
+            Controls.Add(menuStrip1);
+            MainMenuStrip = menuStrip1;
+            Name = "FormListStock";
+            Text = "FormListStock";
+            Load += FormListStock_Load;
+            ((System.ComponentModel.ISupportInitialize)grdStocks).EndInit();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private DataGridView grdStocks;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem mnuBack;
     }
 }

@@ -8,10 +8,6 @@ namespace SuppliersApp
     {
         private FormSuppliersApp parent;
 
-        public FormListSupplier()
-        {
-            InitializeComponent();
-        }
 
         public FormListSupplier(FormSuppliersApp Parent)
         {
@@ -34,11 +30,5 @@ namespace SuppliersApp
             parent.Visible = true;
         }
 
-        private void FormListSupplier_Load_1(object sender, EventArgs e)
-        {
-            DataSet ds = Supplier.GetAllSuppliers();
-
-            grdSuppliers.DataSource = ds.Tables[0];
-        }
     }
 }

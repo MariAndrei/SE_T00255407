@@ -119,7 +119,7 @@ namespace SuppliersApp
         public static DataSet GetSales()
         {
             string sqlQuery =
-                "SELECT SaleID, StockID, QtySold, SaleDate, Total " +
+                "SELECT SaleID, StockID, Qty, SaleDate, Total " +
                 "FROM Sales " +
                 "ORDER BY SaleID";
 
