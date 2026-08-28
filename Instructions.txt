@@ -1,0 +1,3 @@
+THIS PROJECT USES "C##1User" As user, "Oracle123456" As password because I am unable to connect to the MTU database from home.
+
+The search buttons in Update and Remove stocks search by DESCRIPTION.
