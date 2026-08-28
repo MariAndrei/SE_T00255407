@@ -123,5 +123,7 @@ namespace SuppliersApp
             this.Close();
             parent.Visible = true;
         }
+
+
     }
 }

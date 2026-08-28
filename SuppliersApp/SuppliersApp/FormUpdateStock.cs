@@ -40,25 +40,11 @@ namespace SuppliersApp
         {
             if (e.KeyCode == Keys.Enter)
             {
-                e.SuppressKeyPress = true;
-
                 DataSet ds = Stock.FindStock(txtSearch.Text);
 
                 grdStock.DataSource = ds.Tables[0];
 
-                if (grdStock.Rows.Count == 0)
-                {
-                    MessageBox.Show(
-                        "No stock found.",
-                        "Search",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Information
-                    );
-
-                    return;
-                }
-
-                grdStock.Visible = true;
+                e.SuppressKeyPress = true;
             }
         }
 

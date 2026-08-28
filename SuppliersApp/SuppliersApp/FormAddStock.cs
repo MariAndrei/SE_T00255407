@@ -22,10 +22,8 @@ namespace SuppliersApp
 
         private void FormAddStock_Load(object sender, EventArgs e)
         {
-            // Get the next Stock ID
             txtStockID.Text = Stock.GetNextStockID().ToString("0000");
 
-            // Load Suppliers into the Supplier ComboBox
             DataSet ds = Supplier.GetAllSuppliers();
 
             cboSupplier.Items.Clear();

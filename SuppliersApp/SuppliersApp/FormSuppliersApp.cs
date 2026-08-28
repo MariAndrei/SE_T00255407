@@ -12,14 +12,12 @@ namespace SuppliersApp
 
         // STOCK
 
-        private void mnuStock_Click(object sender, EventArgs e)
-        {
-        }
-
         private void mnuAddStock_Click(object sender, EventArgs e)
         {
-            this.Hide();
             FormAddStock nextForm = new FormAddStock(this);
+
+            this.Hide();
+
             nextForm.Show();
         }
 
@@ -46,10 +44,6 @@ namespace SuppliersApp
 
 
         // SUPPLIER
-
-        private void mnuSupplier_Click(object sender, EventArgs e)
-        {
-        }
 
         private void mnuAddSupp_Click(object sender, EventArgs e)
         {
@@ -82,9 +76,6 @@ namespace SuppliersApp
 
         // SALE
 
-        private void mnuSale_Click(object sender, EventArgs e)
-        {
-        }
 
         private void mnuAddSale_Click(object sender, EventArgs e)
         {
@@ -132,9 +123,5 @@ namespace SuppliersApp
             Application.Exit();
         }
 
-        private void mnuRevenue_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

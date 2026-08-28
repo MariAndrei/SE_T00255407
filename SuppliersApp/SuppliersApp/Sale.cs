@@ -42,7 +42,6 @@ namespace SuppliersApp
             Database.ExecuteNonQuery(sqlQuery);
         }
 
-        // Remove Sale
         public void RemoveSale()
         {
             string sqlQuery =

@@ -65,7 +65,6 @@
             mnuStock.Name = "mnuStock";
             mnuStock.Size = new Size(48, 20);
             mnuStock.Text = "Stock";
-            mnuStock.Click += mnuStock_Click;
             // 
             // mnuAddStock
             // 
@@ -101,7 +100,6 @@
             mnuSupplier.Name = "mnuSupplier";
             mnuSupplier.Size = new Size(62, 20);
             mnuSupplier.Text = "Supplier";
-            mnuSupplier.Click += mnuSupplier_Click;
             // 
             // mnuAddSupp
             // 
@@ -137,7 +135,6 @@
             mnuSale.Name = "mnuSale";
             mnuSale.Size = new Size(40, 20);
             mnuSale.Text = "Sale";
-            mnuSale.Click += mnuSale_Click;
             // 
             // mnuAddSale
             // 
@@ -173,7 +170,6 @@
             mnuRevenue.Name = "mnuRevenue";
             mnuRevenue.Size = new Size(64, 20);
             mnuRevenue.Text = "Revenue";
-            mnuRevenue.Click += mnuRevenue_Click;
             // 
             // mnuViewRevenue
             // 

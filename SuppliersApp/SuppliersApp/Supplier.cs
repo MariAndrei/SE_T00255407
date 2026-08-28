@@ -28,8 +28,9 @@ namespace SuppliersApp
         public static DataSet GetAllSuppliers()
         {
             string sqlQuery =
-                "SELECT SuppID, Name, Email, Phone, Manufacturer " +
-                "FROM Supplier ORDER BY SuppID";
+                "SELECT SuppID, Name, PhoneNo, Address, Manufacturer " +
+                "FROM Suppliers " +
+                "ORDER BY SuppID";
 
             return Database.ExecuteMultiRowQuery(sqlQuery);
         }

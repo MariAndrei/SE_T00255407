@@ -79,6 +79,7 @@
             txtSearch.Name = "txtSearch";
             txtSearch.Size = new Size(100, 23);
             txtSearch.TabIndex = 2;
+            txtSearch.KeyDown += txtSearch_KeyDown;
             // 
             // lblSearch
             // 

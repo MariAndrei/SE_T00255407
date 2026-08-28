@@ -1,13 +1,15 @@
-﻿using Oracle.ManagedDataAccess.Client;
+﻿using System.Windows.Forms;
+using Oracle.ManagedDataAccess.Client;
 using System;
 using System.Data;
+
 
 namespace SuppliersApp
 {
     class Database
     {
         public const string connectionString =
-            "Data Source = localhost/orcl; User Id = C##User1; Password = Oracle123456;";
+    "Data Source = localhost/orcl; User Id = C##User1; Password = Oracle123456;";
 
         // Open an Oracle DB connection
         public static OracleConnection OpenConnection()
@@ -20,28 +22,27 @@ namespace SuppliersApp
             return conn;
         }
 
+
         public static DataSet ExecuteMultiRowQuery(string query)
         {
-            // Open a connection to an Oracle database
-            OracleConnection conn = OpenConnection();
+            using (OracleConnection conn = OpenConnection())
+            {
+                using (OracleCommand cmd = new OracleCommand(query, conn))
+                {
+                    using (OracleDataAdapter da = new OracleDataAdapter(cmd))
+                    {
+                        DataSet ds = new DataSet();
 
-            OracleCommand cmd = new OracleCommand(query, conn);
+                        da.Fill(ds);
 
-            OracleDataAdapter da = new OracleDataAdapter(cmd);
-
-            DataSet ds = new DataSet();
-
-
-            da.Fill(ds);
-
-            conn.Close();
-
-            return ds;
+                        return ds;
+                    }
+                }
+            }
         }
 
         public static DataRow ExecuteSingleRowQuery(string query)
         {
-            // Open a connection to an Oracle database
             OracleConnection conn = OpenConnection();
 
             OracleCommand cmd = new OracleCommand(query, conn);
@@ -49,7 +50,6 @@ namespace SuppliersApp
             OracleDataAdapter da = new OracleDataAdapter(cmd);
 
             DataTable dt = new DataTable();
-
 
             da.Fill(dt);
 
@@ -63,26 +63,23 @@ namespace SuppliersApp
 
         public static void ExecuteNonQuery(string query)
         {
-            OracleConnection conn = OpenConnection();
-
-            OracleCommand cmd = new OracleCommand(query, conn);
-
-            cmd.ExecuteNonQuery();
-
-            conn.Close();
+            using (OracleConnection conn = OpenConnection())
+            {
+                using (OracleCommand cmd = new OracleCommand(query, conn))
+                {
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
 
         public static int GetNextID(string tableName, string primaryKeyColumn)
         {
-            // Define the SQL query
             string sqlQuery =
                 "SELECT NVL(MAX(" + primaryKeyColumn + "), 0) + 1 " +
                 "FROM " + tableName;
 
-            // Execute the query
             DataRow row = ExecuteSingleRowQuery(sqlQuery);
 
-            // Return the next ID
             return Convert.ToInt32(row[0]);
         }
     }

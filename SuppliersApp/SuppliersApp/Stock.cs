@@ -117,7 +117,7 @@ namespace SuppliersApp
             string sqlQuery =
                 "SELECT StockID, Description, Price, StockQty, SuppID " +
                 "FROM Stock " +
-                "WHERE Description LIKE '%" + description + "%' " +
+                "WHERE UPPER(Description) LIKE UPPER('%" + description + "%') " +
                 "ORDER BY Description";
 
             return Database.ExecuteMultiRowQuery(sqlQuery);

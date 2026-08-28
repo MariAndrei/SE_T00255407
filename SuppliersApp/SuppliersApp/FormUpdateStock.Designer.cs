@@ -111,6 +111,7 @@
             txtSearch.Name = "txtSearch";
             txtSearch.Size = new Size(100, 23);
             txtSearch.TabIndex = 10;
+            txtSearch.KeyDown += txtSearch_KeyDown;
             // 
             // txtStockQty
             // 
